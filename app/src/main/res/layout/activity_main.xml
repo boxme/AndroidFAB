@@ -6,7 +6,7 @@
     tools:context=".MainActivity">
 
     <com.desmond.fabdemo.FloatingActionButton
-        android:id="@+id/pink_icon"
+        android:id="@+id/pink_customed_icon_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -15,4 +15,13 @@
         app:fab_icon="@drawable/ic_fab_star"
         app:fab_colorNormal="@color/pink"
         app:fab_colorPressed="@color/pink_pressed"/>
+
+    <com.desmond.fabdemo.AddFloatingActionButton
+        android:id="@+id/blue_plus_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        app:fab_plusIconColor="@android:color/white" />
+
 </RelativeLayout>
