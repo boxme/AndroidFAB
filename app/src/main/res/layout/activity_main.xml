@@ -24,4 +24,80 @@
         android:layout_margin="16dp"
         app:fab_plusIconColor="@android:color/white" />
 
+    <com.desmond.fabdemo.FloatingActionsMenu
+        android:id="@+id/green_expand_up_fam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/pink_customed_icon_fab"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dp"
+        app:fab_labelStyle="@style/floating_action_menu_labels_style"
+        app:fab_labelsPosition="left"
+        app:fab_addButtonColorNormal="@color/sa_green"
+        app:fab_addButtonColorPressed="@color/sa_green_dark"
+        app:fab_expandDirection="up" >
+
+        <com.desmond.fabdemo.FloatingActionButton
+            android:id="@+id/action_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_title="Action A"
+            app:fab_icon="@drawable/ic_fab_star"
+            app:fab_colorNormal="@color/sa_green"
+            app:fab_colorPressed="@color/sa_green_dark"/>
+
+        <com.desmond.fabdemo.FloatingActionButton
+            android:id="@+id/action_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_title="Action B"
+            app:fab_icon="@drawable/ic_fab_star"
+            app:fab_colorNormal="@color/sa_green"
+            app:fab_colorPressed="@color/sa_green_dark"/>
+
+    </com.desmond.fabdemo.FloatingActionsMenu>
+
+    <com.desmond.fabdemo.FloatingActionsMenu
+        android:id="@+id/green_expand_down_fam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:fab_labelsPosition="right"
+        app:fab_labelStyle="@style/floating_action_menu_labels_style"
+        app:fab_addButtonColorNormal="@color/sa_green"
+        app:fab_addButtonColorPressed="@color/sa_green_dark"
+        app:fab_expandDirection="down" >
+
+        <com.desmond.fabdemo.FloatingActionButton
+            android:id="@+id/action_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_title="Action C"
+            app:fab_icon="@drawable/ic_fab_star"
+            app:fab_colorNormal="@color/sa_green"
+            app:fab_colorPressed="@color/sa_green_dark"/>
+
+    </com.desmond.fabdemo.FloatingActionsMenu>
+
+    <com.desmond.fabdemo.FloatingActionsMenu
+        android:id="@+id/green_expand_left_fam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:fab_addButtonColorNormal="@color/sa_green"
+        app:fab_addButtonColorPressed="@color/sa_green_dark"
+        android:layout_alignParentRight="true"
+        app:fab_expandDirection="left" >
+
+        <com.desmond.fabdemo.FloatingActionButton
+            android:id="@+id/action_e"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_title="Action E"
+            app:fab_icon="@drawable/ic_fab_star"
+            app:fab_colorNormal="@color/sa_green"
+            app:fab_colorPressed="@color/sa_green_dark"/>
+
+    </com.desmond.fabdemo.FloatingActionsMenu>
+
 </RelativeLayout>

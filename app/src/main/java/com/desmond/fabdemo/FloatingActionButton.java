@@ -48,7 +48,7 @@ public class FloatingActionButton extends ImageButton {
     boolean mStrokeVisible;
 
     public FloatingActionButton(Context context) {
-        super(context, null);
+        this(context, null);
     }
 
     public FloatingActionButton(Context context, AttributeSet attrs) {
@@ -284,6 +284,14 @@ public class FloatingActionButton extends ImageButton {
             mIcon = 0;
             mIconDrawable = iconDrawable;
             updateBackground();
+        }
+    }
+
+    public void setTitle(String title) {
+        mTitle = title;
+        TextView label = getLabelView();
+        if (label != null) {
+            label.setText(title);
         }
     }
 
