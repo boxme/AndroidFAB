@@ -24,6 +24,15 @@
         android:layout_margin="16dp"
         app:fab_plusIconColor="@android:color/white" />
 
+    <com.desmond.fabdemo.FloatingActionButton
+        android:id="@+id/pink_ripple_icon_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/blue_plus_fab"
+        android:layout_margin="16dp"
+        app:fab_icon="@drawable/ic_fab_star"
+        app:fab_background="@drawable/fab_bg_ripple_drawable"/>
+
     <com.desmond.fabdemo.FloatingActionsMenu
         android:id="@+id/green_expand_up_fam"
         android:layout_width="wrap_content"

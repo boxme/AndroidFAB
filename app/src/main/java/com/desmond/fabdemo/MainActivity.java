@@ -22,6 +22,13 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+        findViewById(R.id.pink_ripple_icon_fab).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Clicked pink FAB with ripple effect", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         createFloatingActionMenu();
     }
 

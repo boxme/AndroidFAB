@@ -12,6 +12,10 @@
         </attr>
         <attr name="fab_title" format="string"/>
         <attr name="fab_stroke_visible" format="boolean"/>
+
+        <!-- Background resource -->
+        <attr name="fab_background" format="reference"/>
+
     </declare-styleable>
 
     <declare-styleable name="AddFloatingActionButton">

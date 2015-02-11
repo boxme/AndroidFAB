@@ -39,6 +39,7 @@ public class FloatingActionButton extends ImageButton {
     @DrawableRes
     private int mIcon;
     private Drawable mIconDrawable;
+    private int mBackgroundDrawableRef;
     private int mSize;
 
     private float mCircleSize;
@@ -66,6 +67,7 @@ public class FloatingActionButton extends ImageButton {
         mColorNormal = attr.getColor(R.styleable.FloatingActionButton_fab_colorNormal, getColor(android.R.color.holo_blue_dark));
         mColorPressed = attr.getColor(R.styleable.FloatingActionButton_fab_colorPressed, getColor(android.R.color.holo_blue_light));
         mColorDisabled = attr.getColor(R.styleable.FloatingActionButton_fab_colorDisabled, getColor(android.R.color.darker_gray));
+        mBackgroundDrawableRef = attr.getResourceId(R.styleable.FloatingActionButton_fab_background, 0);
         mSize = attr.getInt(R.styleable.FloatingActionButton_fab_size, SIZE_NORMAL);
         mIcon = attr.getResourceId(R.styleable.FloatingActionButton_fab_icon, 0);
         mTitle = attr.getString(R.styleable.FloatingActionButton_fab_title);
@@ -139,14 +141,24 @@ public class FloatingActionButton extends ImageButton {
         else                       {return new ColorDrawable(Color.TRANSPARENT);}
     }
 
-    private StateListDrawable createFillDrawable(float strokeWidth) {
+    private Drawable createFillDrawable(float strokeWidth) {
         // Lets you assign a number of graphic images to a single Drawable
         // and swap out the visible item by a string ID value.
-        StateListDrawable drawable = new StateListDrawable();
+        Drawable drawable;
 
-        drawable.addState(new int[] { -android.R.attr.state_enabled}, createCircleDrawable(mColorDisabled, strokeWidth));
-        drawable.addState(new int[] { android.R.attr.state_pressed }, createCircleDrawable(mColorPressed, strokeWidth));
-        drawable.addState(new int[] { }, createCircleDrawable(mColorNormal, strokeWidth));
+        if (mBackgroundDrawableRef == 0) {
+            drawable = new StateListDrawable();
+
+            ((StateListDrawable) drawable).addState(
+                    new int[]{-android.R.attr.state_enabled}, createCircleDrawable(mColorDisabled, strokeWidth));
+            ((StateListDrawable) drawable).addState(
+                    new int[]{android.R.attr.state_pressed}, createCircleDrawable(mColorPressed, strokeWidth));
+            ((StateListDrawable) drawable).addState(
+                    new int[]{}, createCircleDrawable(mColorNormal, strokeWidth));
+        }
+        else {
+            drawable = getResources().getDrawable(mBackgroundDrawableRef);
+        }
 
         return drawable;
     }
